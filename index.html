@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Registration Form</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Register</h1>
+
+    <!-- Registration Form -->
+    <form id="registrationForm" novalidate>
+      
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username" 
+          required 
+          minlength="3" 
+          maxlength="30"
+          placeholder="Enter username"
+        />
+        <span class="error-message" id="usernameError"></span>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required 
+          placeholder="Enter email"
+        />
+        <span class="error-message" id="emailError"></span>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          required 
+          minlength="8" 
+          pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}" 
+          placeholder="Enter password"
+        />
+        <small>Password must be at least 8 characters long, include an uppercase letter, lowercase letter, and a number.</small>
+        <span class="error-message" id="passwordError"></span>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          name="confirmPassword" 
+          required 
+          placeholder="Re-enter password"
+        />
+        <span class="error-message" id="confirmPasswordError"></span>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit">Register</button>
+      <div id="statusMessage" style="margin-top: 10px; color:#333;"></div>
+
+    </form>
+  </div>
+</body>
+</html>
